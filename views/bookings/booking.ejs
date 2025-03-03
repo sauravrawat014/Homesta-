@@ -1,0 +1,26 @@
+<% layout("/layouts/boilerplate.ejs") %>
+
+<div class="row mt-3">
+
+<form action="/booking/<%= listing._id %>/checkout" method="POST" novalidate class="needs-validation">
+    <h2>Booking for <%= listing.title %></h2>
+
+    <label class="form-label">Check-in Date:</label>
+    <input type="date" name="checkInDate" class="form-control" required>
+
+    <label class="form-label">Check-out Date:</label>
+    <input type="date" name="checkOutDate" class="form-control" required>
+
+    <label class="form-label">Total Price:</label>
+    <input type="number" name="totalPrice" value="5000" class="form-control" readonly> <!-- Example price -->
+
+    <input type="hidden" name="userId" value="<%= user ? user._id : '' %>">
+
+
+    <br/>
+
+    <button type="submit" class="btn btn-dark add-btn">Proceed to Payment</button>
+    <br/>
+</form>
+
+</div>

@@ -1,0 +1,15 @@
+<% layout("/layouts/boilerplate.ejs") %>
+
+<div class="row mt-3">
+
+<h1>Booking Cancelled Successfully</h1>
+<p>Your booking has been cancelled. Here are the details:</p>
+<ul>
+    <li><strong>Booking ID:</strong> <%= booking._id %></li>
+    <li><strong>Check-In Date:</strong> <%= booking.checkInDate.toDateString() %></li>
+    <li><strong>Check-Out Date:</strong> <%= booking.checkOutDate.toDateString() %></li>
+    <li><strong>Status:</strong> <%= booking.status %></li>
+</ul>
+<a href="/listing"><button btn btn-dark>Back to Listing</button></a>
+
+</div>
